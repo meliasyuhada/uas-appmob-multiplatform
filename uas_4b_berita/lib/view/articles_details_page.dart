@@ -32,13 +32,12 @@ class ArticlePage extends StatelessWidget {
             ),
             Container(padding: EdgeInsets.all(6.0),
             decoration: BoxDecoration(
-              color: Colors.blueGrey,
-              borderRadius: BorderRadius.circular(30.0),
+              borderRadius: BorderRadius.circular(16.0),
             ),
             child: Text(
               article.title,
               style: TextStyle(
-                color: Colors.white,
+                color: Colors.black,
                 fontWeight: FontWeight.bold,
                 fontSize: 16.0,
               ),

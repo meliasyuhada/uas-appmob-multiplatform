@@ -16,10 +16,12 @@ Widget customListTile(Article article, BuildContext context) {
       padding: EdgeInsets.all(8.0),
       decoration: BoxDecoration(
         color: Colors.white,
+        borderRadius: BorderRadius.circular(20.0),
         boxShadow: [
           BoxShadow(
             color: Colors.blueGrey,
             blurRadius: 3.0,
+            
             ),
         ]),
       child: Column(
@@ -27,7 +29,7 @@ Widget customListTile(Article article, BuildContext context) {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
-            height: 200.0,
+            height: 150.0,
             width: double.infinity,
             decoration: BoxDecoration(
 
@@ -41,12 +43,11 @@ Widget customListTile(Article article, BuildContext context) {
           ),
           Container(padding: EdgeInsets.all(6.0),
           decoration: BoxDecoration(
-            color: Colors.blueGrey,
-            borderRadius: BorderRadius.circular(30.0),
+            borderRadius: BorderRadius.circular(0.0),
           ),
           child: Text(article.title,
           style: TextStyle(
-            color: Colors.white,
+            color: Colors.black,
             fontWeight: FontWeight.bold,
             fontSize: 16.0
           ),),
@@ -56,7 +57,6 @@ Widget customListTile(Article article, BuildContext context) {
           ),
           Text(article.subtitle,
           style: TextStyle(
-            fontWeight: FontWeight.bold,
             fontSize: 12.0),)
           
         ],),

@@ -1,5 +1,4 @@
 import 'dart:convert';
-import 'package:flutter/cupertino.dart';
 import 'package:http/http.dart';
 import 'package:uas_4b_berita/model/article_model.dart';
 
@@ -13,12 +12,12 @@ class ApiService {
     if(res.statusCode ==200) {
       Map<String, dynamic>json = jsonDecode(res.body);
 
-      List<dynamic> body = json['articles'];
+      List<dynamic> body = json['berita'];
 
-      List<Article> articles =
+      List<Article> berita =
       body.map((dynamic item) => Article.fromJson(item)).toList();
 
-      return articles;
+      return berita;
     } else {
       throw ("Can't get the Articles");
     }
