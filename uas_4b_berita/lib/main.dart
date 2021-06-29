@@ -1,5 +1,6 @@
-import 'dart:html';
-
+import 'package:uas_4b_berita/services/api_service.dart';
+import 'view/customListTile.dart';
+import 'model/article_model.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -11,7 +12,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: MyHomePage(),
+      home: HomePage(),
     );
   }
 }
@@ -33,15 +34,15 @@ class _HomePageState extends State<HomePage> {
         ),
 
         body: FutureBuilder(
-          future: Client.getArticle(),
+          future: client.getArticle(),
           builder: (BuildContext context, AsyncSnapshot<List<Article>> snapshot) {
 
             if (snapshot.hasData) {
               List<Article> articles = snapshot.data;
               return ListView.builder(
                 itemCount: articles.length,
-                itemBuilder: (context, inddex) => 
-                customListTile(articles[index]), context),);
+                itemBuilder: (context, index) => 
+                customListTile(articles[index], context),);
           }
           return Center(
             child: CircularProgressIndicator(),
